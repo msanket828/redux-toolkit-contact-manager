@@ -1,0 +1,17 @@
+header {
+  background: rgb(97, 97, 184);
+  padding: 10px 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+header nav h1 {
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFF;
+}

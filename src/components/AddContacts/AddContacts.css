@@ -1,0 +1,48 @@
+.contact-container {
+  margin: 20px 16px;
+  background: #EEE;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cta {
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFF;
+}
+
+.primary-cta {
+  background: #EE1C25;
+  border: none;
+  border-radius: 16px;
+  padding: 5px 15px;
+}
+
+.primary-cta:hover {
+  background: #97080f;
+}
+
+.form-control {
+  font-size: 14px !important;
+  line-height: 18px !important;
+  height: auto !important;
+  padding: 8px 10px !important;
+  color: #000 !important;
+}
+
+.form-control:placeholder-shown {
+  font-size: 14px;
+  line-height: 18px;
+  color: #d1c7c7;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+label {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
+  font-weight: 500;
+}

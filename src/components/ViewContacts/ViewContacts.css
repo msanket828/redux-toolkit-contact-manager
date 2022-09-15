@@ -1,0 +1,47 @@
+.ind-contact-block {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  background: #FFF;
+  padding: 15px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.ind-contact-block:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.ind-contact-block .ind-contact-block-profile {
+  width: 40px;
+  height: 40px;
+  background: #777;
+  border-radius: 50px;
+  margin: 0 10px 0 0;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFF;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ind-contact-block .ind-contact-block-info .name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: capitalize;
+  margin: 0 0 5px;
+}
+
+.ind-contact-block .ind-contact-block-info .contact-no {
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+.ind-contact-block .ind-contact-block-info .email {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
