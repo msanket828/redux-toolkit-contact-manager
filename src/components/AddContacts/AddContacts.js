@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 import { addContacts } from "../../features/contactSlice";
 import "./AddContacts.css";
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate  } from "react-router-dom";
 
 
 
 const AddContacts = () => {
+  const navigate=useNavigate();
   const dispatch=useDispatch();
   const [fullName, setFullName] = useState("");
   const [contactNumber, setContactNumber] = useState("");
@@ -36,6 +38,7 @@ const AddContacts = () => {
         contactNumber:contactNumber,
         emailId:emailId
       }));
+      navigate('/viewcontacts');
     }
   };
 

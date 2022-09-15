@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [isRedirect,setIsRedirect]=useState(true);
+  const location=useLocation();
+  console.log(location);
 
   const handleRedirectPage=()=> {
     setIsRedirect(!isRedirect);
   }
 
   useEffect(() => {
-    window.location.pathname.includes('viewcontacts') && setIsRedirect(!isRedirect)
-  }, [])
+    location.pathname.includes('viewcontacts') && setIsRedirect(false)
+  }, [location.pathname])
   
 
   return (
