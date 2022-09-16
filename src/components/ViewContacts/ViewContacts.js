@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact, updateContact } from '../../features/contactSlice';
+import deleteIcon from '../../assets/images/delete.svg';
+import editIcon from '../../assets/images/edit.svg';
 import './ViewContacts.css';
 
 const ViewContacts = () => {
@@ -87,10 +89,10 @@ const ViewContacts = () => {
                   <p className='email'>{contact.emailId}</p>
                 </div>
                 <div className='floating-cta delete' role="button" onClick={() => dispatch(deleteContact(contact.id))}>
-                  <img src='./delete.svg' alt='delete' className='img-fluid' />
+                  <img src={deleteIcon} alt='delete' className='img-fluid' />
                 </div>
                 <div className="floating-cta edit" role="button" onClick={() => handleEdit(contact.id)}>
-                  <img src='./edit.svg' alt='edit' className='img-fluid' />
+                  <img src={editIcon} alt='edit' className='img-fluid' />
                 </div>
               </div>
             )
