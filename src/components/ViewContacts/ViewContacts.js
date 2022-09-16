@@ -1,14 +1,13 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from '../../features/contactSlice';
+import { deleteContact, updateContact } from '../../features/contactSlice';
 import './ViewContacts.css';
 
 const ViewContacts = () => {
   const dispatch = useDispatch();
   const allContacts = useSelector((state) => state.contactManager.contacts);
+
   const [selectedId, setSelectedId] = useState();
   const [showModal, setShowModal] = useState(false);
   const [editContact, setEditContact] = useState();
@@ -58,6 +57,21 @@ const ViewContacts = () => {
     }
   }, [editContact])
 
+  const onSubmitUpdateRecord =(e)=> {
+    e.preventDefault();
+    if(uFullName === '' || uContactNumber === '' || uEmailId === '') {
+      alert('please fill all values');
+    } else {
+      dispatch(updateContact({
+        id:editedContactId,
+        fullName:uFullName,
+        contactNumber: uContactNumber,
+        emailId: uEmailId
+      }));
+      setShowModal(false);
+    }
+  }
+
   return (
     <>
       <div className='contact-container view-contacts'>
@@ -90,7 +104,7 @@ const ViewContacts = () => {
           <h3>Edit Contact</h3>
         </Modal.Header>
         <Modal.Body>
-          <form action="" autoComplete='off'>
+          <form action="" autoComplete='off' onSubmit={onSubmitUpdateRecord}>
             <div className="form-group">
               <label htmlFor="uFullName">Update FullName</label>
               <input type="text" id="uFullName" className='form-control' placeholder='Enter Updated Full Name'

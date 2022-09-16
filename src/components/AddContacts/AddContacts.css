@@ -1,9 +1,9 @@
 .contact-container {
-  margin: 20px 16px;
-  background: #EEE;
-  padding: 20px;
-  border-radius: 10px;
+  position: relative;
+  z-index: 100;
+  padding: 20px 16px;
 }
+
 
 .primary-cta:hover {
   background: #97080f;
@@ -14,7 +14,7 @@
   line-height: 18px !important;
   height: auto !important;
   padding: 8px 10px !important;
-  color: #000 !important; 
+  color: #000 !important;
 }
 
 .form-control:placeholder-shown {
