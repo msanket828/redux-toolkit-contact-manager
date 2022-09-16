@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redux-toolkit-contact-manager/static/css/main.e0bca80c.css",
+    "main.js": "/redux-toolkit-contact-manager/static/js/main.1d2ee121.js",
+    "index.html": "/redux-toolkit-contact-manager/index.html",
+    "main.e0bca80c.css.map": "/redux-toolkit-contact-manager/static/css/main.e0bca80c.css.map",
+    "main.1d2ee121.js.map": "/redux-toolkit-contact-manager/static/js/main.1d2ee121.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0bca80c.css",
+    "static/js/main.1d2ee121.js"
+  ]
+}
