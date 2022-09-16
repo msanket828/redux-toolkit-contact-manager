@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0bca80c.css",
-    "main.js": "/static/js/main.83db3e06.js",
-    "static/media/edit.svg": "/static/media/edit.4e2c2cec0649d430cef6df6f3c74c671.svg",
-    "index.html": "/index.html",
-    "static/media/delete.svg": "/static/media/delete.78831a5e1ecfa6b555a4159849bddd97.svg",
-    "main.e0bca80c.css.map": "/static/css/main.e0bca80c.css.map",
-    "main.83db3e06.js.map": "/static/js/main.83db3e06.js.map"
+    "main.css": "/redux-toolkit-contact-manager/static/css/main.e0bca80c.css",
+    "main.js": "/redux-toolkit-contact-manager/static/js/main.1fa66e4d.js",
+    "static/media/edit.svg": "/redux-toolkit-contact-manager/static/media/edit.4e2c2cec0649d430cef6df6f3c74c671.svg",
+    "index.html": "/redux-toolkit-contact-manager/index.html",
+    "static/media/delete.svg": "/redux-toolkit-contact-manager/static/media/delete.78831a5e1ecfa6b555a4159849bddd97.svg",
+    "main.e0bca80c.css.map": "/redux-toolkit-contact-manager/static/css/main.e0bca80c.css.map",
+    "main.1fa66e4d.js.map": "/redux-toolkit-contact-manager/static/js/main.1fa66e4d.js.map"
   },
   "entrypoints": [
     "static/css/main.e0bca80c.css",
-    "static/js/main.83db3e06.js"
+    "static/js/main.1fa66e4d.js"
   ]
 }
