@@ -6,7 +6,6 @@ import './Header.css';
 const Header = () => {
   const [isRedirect,setIsRedirect]=useState(true);
   const location=useLocation();
-  console.log(location);
 
   const handleRedirectPage=()=> {
     setIsRedirect(!isRedirect);

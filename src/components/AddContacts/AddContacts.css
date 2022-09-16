@@ -14,7 +14,7 @@
 .primary-cta {
   background: #EE1C25;
   border: none;
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 5px 15px;
 }
 
@@ -27,7 +27,7 @@
   line-height: 18px !important;
   height: auto !important;
   padding: 8px 10px !important;
-  color: #000 !important;
+  color: #000 !important; 
 }
 
 .form-control:placeholder-shown {

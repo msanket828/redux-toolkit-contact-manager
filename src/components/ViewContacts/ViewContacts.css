@@ -1,12 +1,16 @@
 .ind-contact-block {
+  position: relative;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   background: #FFF;
-  padding: 15px 10px;
+  padding: 15px 50px 10px 10px;
   border-radius: 6px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  z-index: 10;
+  overflow: hidden;
 }
+
 
 .ind-contact-block:not(:last-child) {
   margin: 0 0 10px;
@@ -44,4 +48,31 @@
   font-size: 14px;
   line-height: 18px;
   margin: 0;
+}
+
+.ind-contact-block .floating-cta {
+  position: absolute;
+  right: -35px;
+  transition: all .2s ease;
+}
+
+.ind-contact-block.clicked .floating-cta {
+  right: 10px;
+}
+
+.ind-contact-block .floating-cta.delete {
+  top: 15px;
+  width:35px;
+  height: 35px;
+  border-radius: 50px;
+  background: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.ind-contact-block .floating-cta.delete:hover {
+  background: rgb(179, 65, 65);
+  transition: all .2s ease;
 }
