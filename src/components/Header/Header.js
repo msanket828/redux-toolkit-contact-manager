@@ -21,8 +21,8 @@ const Header = () => {
       <nav>
         <h1>Contact Manager</h1>
         <div className='nav-link-container'>
-          <NavLink className='btn btn-primary' to={`${isRedirect ? 'viewcontacts':'addcontacts'}`}
-          onClick={handleRedirectPage}>{isRedirect ? 'View Contacts' : 'Add Contacts'}</NavLink>
+          <NavLink className='cta primary-cta' to={`${isRedirect ? 'viewcontacts':'addcontacts'}`}
+          onClick={handleRedirectPage}>{isRedirect ? 'View' : 'Add'}</NavLink>
         </div>
       </nav>
     </header>

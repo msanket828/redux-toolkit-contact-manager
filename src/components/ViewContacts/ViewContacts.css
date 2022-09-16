@@ -60,10 +60,23 @@
   right: 10px;
 }
 
+.ind-contact-block.clicked {
+  background: #333;
+  color: #FFF;
+}
+
 .ind-contact-block .floating-cta.delete {
   top: 15px;
-  width:35px;
-  height: 35px;
+}
+
+.ind-contact-block .floating-cta.edit {
+  top: 55px;
+  transition-delay: 0.2s;
+}
+
+.ind-contact-block .floating-cta {
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   background: #777;
   display: flex;
@@ -75,4 +88,13 @@
 .ind-contact-block .floating-cta.delete:hover {
   background: rgb(179, 65, 65);
   transition: all .2s ease;
+}
+.ind-contact-block .floating-cta.edit:hover {
+  background: rgb(32, 133, 32);
+  transition: all .2s ease;
+}
+
+.customWidth {
+  width: 90% !important;
+  margin: 0 auto !important;
 }

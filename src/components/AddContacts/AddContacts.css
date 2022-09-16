@@ -5,19 +5,6 @@
   border-radius: 10px;
 }
 
-.cta {
-  font-size: 16px;
-  line-height: 22px;
-  color: #FFF;
-}
-
-.primary-cta {
-  background: #EE1C25;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 15px;
-}
-
 .primary-cta:hover {
   background: #97080f;
 }
@@ -38,11 +25,4 @@
 
 .form-control:focus {
   box-shadow: none !important;
-}
-
-label {
-  font-size: 14px;
-  line-height: 18px;
-  color: #000;
-  font-weight: 500;
 }
