@@ -1,50 +1,45 @@
+import { useFormik } from "formik";
 import React from "react";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+import * as Yup from 'yup';
 import { addContacts } from "../../features/contactSlice";
 import "./AddContacts.css";
-import { v4 as uuidv4 } from 'uuid';
-import { useNavigate  } from "react-router-dom";
 
 
 
 const AddContacts = () => {
   const navigate=useNavigate();
   const dispatch=useDispatch();
-  const [fullName, setFullName] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
-  const [emailId, setEmailId] = useState("");
 
-  const handleFullName = (e) => {
-    setFullName(e.target.value);
-  };
 
-  const handleContactNumber = (e) => {
-    setContactNumber(e.target.value);
-  };
-
-  const handleEmailId = (e) => {
-    setEmailId(e.target.value);
-  };
-
-  const handleAddContactSubmit = (e) => {
-    e.preventDefault();
-    if (fullName === "" || contactNumber === "" || emailId === "") {
-      alert("please fill all values");
-    } else {
+  const formik=useFormik({
+    initialValues: {
+      fullName:"",
+      contactNumber:"",
+      emailId: ""
+    },
+    validationSchema: Yup.object({
+      fullName: Yup.string().max(25,"Fullname should not exceed than 25 characters").required('FullName is required'),
+      contactNumber:Yup.number().required('Contact number required'),
+      emailId:Yup.string().email('Invalid Email id').required('Email id is required')
+    }),
+    onSubmit:(values)=>{      
+      console.log(values);
       dispatch(addContacts({
-        id: uuidv4(),
-        fullName:fullName, 
-        contactNumber:contactNumber,
-        emailId:emailId
+        ...values,
+        id: uuidv4()
       }));
       navigate('/viewcontacts');
     }
-  };
+  })
+
+
 
   return (
     <div className="contact-container add-contact">
-      <form autoComplete="off" onSubmit={handleAddContactSubmit}>
+      <form autoComplete="off" onSubmit={formik.handleSubmit}>
         <div className="form-group">
           <label htmlFor="fullName">FullName</label>
           <input
@@ -53,9 +48,13 @@ const AddContacts = () => {
             id="fullName"
             placeholder="Enter your Name"
             className="form-control"
-            value={fullName}
-            onChange={handleFullName}
+            value={formik.values.fullName}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {
+            formik.touched.fullName && formik.errors.fullName ? <p className="formik-error">***{formik.errors.fullName}</p> : ''
+          }
         </div>
         <div className="form-group">
           <label htmlFor="contactNumber">Contact No</label>
@@ -65,10 +64,14 @@ const AddContacts = () => {
             id="contactNumber"
             placeholder="Enter your Contact Number"
             className="form-control"
-            value={contactNumber}
             maxLength="10"
-            onChange={handleContactNumber}
+            value={formik.values.contactNumber}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {
+            formik.touched.contactNumber && formik.errors.contactNumber ? <p className="formik-error">***{formik.errors.contactNumber}</p> : ''
+          }
         </div>
         <div className="form-group">
           <label htmlFor="emailId">Email ID</label>
@@ -78,9 +81,13 @@ const AddContacts = () => {
             id="emailId"
             placeholder="Enter your Email ID"
             className="form-control"
-            value={emailId}
-            onChange={handleEmailId}
+            value={formik.values.emailId}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+           {
+            formik.touched.emailId && formik.errors.emailId ? <p className="formik-error">***{formik.errors.emailId}</p> : ''
+          }
         </div>
         <button type="submit" className="cta primary-cta">
           Submit

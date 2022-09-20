@@ -26,3 +26,9 @@
 .form-control:focus {
   box-shadow: none !important;
 }
+
+.formik-error {
+  color: #F00;
+  font-size: 12px;
+  line-height: 15px;
+}
