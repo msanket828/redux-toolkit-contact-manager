@@ -15,16 +15,21 @@ const AddContacts = () => {
 
 
   const formik=useFormik({
+    //initial value
     initialValues: {
       fullName:"",
       contactNumber:"",
       emailId: ""
     },
+
+    //actual detail validation
     validationSchema: Yup.object({
       fullName: Yup.string().max(25,"Fullname should not exceed than 25 characters").required('FullName is required'),
       contactNumber:Yup.number().required('Contact number required'),
       emailId:Yup.string().email('Invalid Email id').required('Email id is required')
     }),
+
+    //submit event
     onSubmit:(values)=>{      
       console.log(values);
       dispatch(addContacts({
